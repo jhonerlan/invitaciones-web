@@ -164,6 +164,73 @@
         height: 54px;
       }
     }
+    @media (max-width: 640px) {
+      section.min-h-screen {
+        min-height: auto !important;
+        padding-top: 3.5rem !important;
+        padding-bottom: 3.5rem !important;
+      }
+
+      /* Hero title: override Tailwind utility sizes on very small screens */
+      h1.font-script {
+        font-size: 2.5rem !important;
+        line-height: 1.05 !important;
+        margin-bottom: 0.5rem !important;
+      }
+
+      /* Smaller supporting subtitle */
+      p.font-serif {
+        font-size: 1rem !important;
+      }
+
+      /* Gallery images: keep them reasonably tall but not huge */
+      .gallery-img img {
+        height: 260px !important;
+      }
+
+      /* Iframes (map) use Tailwind h-96; reduce on mobile */
+      .h-96 {
+        height: 320px !important;
+      }
+
+      /* Reduce large icon and heading sizes used throughout */
+      .text-6xl { font-size: 2.25rem !important; }
+      .text-5xl { font-size: 1.75rem !important; }
+      .text-4xl { font-size: 1.5rem !important; }
+
+      /* Tighten paddings on cards for small screens */
+      .p-8 { padding: 1.25rem !important; }
+      .px-6 { padding-left: 1rem !important; padding-right: 1rem !important; }
+      .py-20 { padding-top: 3rem !important; padding-bottom: 3rem !important; }
+
+      /* Make CTA buttons wrap better */
+      a.inline-block { padding-left: 1rem !important; padding-right: 1rem !important; }
+    }
+    @media (max-width: 640px) {
+      /* Stack timeline entries vertically so the time column doesn't push content */
+      #timeline .space-y-8 > div,
+      #timeline .space-y-8 .flex {
+        display: block !important;
+      }
+
+      /* Make the time label inline and smaller */
+      #timeline .w-24 {
+        width: auto !important;
+        text-align: left !important;
+        margin-bottom: 0.5rem !important;
+        display: block !important;
+        float: none !important;
+      }
+
+      /* Hide the vertical line and bullet used for desktop timeline */
+      #timeline .w-px { display: none !important; }
+
+      /* Remove the left margin used to offset card content on desktop */
+      #timeline .ml-12 { margin-left: 0 !important; }
+
+      /* Ensure timeline card uses full width */
+      #timeline .flex-1 { width: 100% !important; padding-left: 0 !important; }
+    }
   </style>
 </head>
 
@@ -183,7 +250,6 @@
     </svg>
   </div>
 
-  <!-- HERO SECTION -->
   <section class="min-h-screen flex flex-col items-center justify-center text-center px-6 py-20 relative overflow-hidden">
     
     <div class="absolute inset-0 z-0">
@@ -253,7 +319,6 @@
     </div>
   </section>
 
-  <!-- GALERÍA -->
   <section id="gallery" class="py-20 px-6 bg-gradient-to-b from-white to-rose-50">
     <div class="max-w-6xl mx-auto">
       
@@ -288,7 +353,6 @@
     </div>
   </section>
 
-  <!-- CRONOGRAMA -->
   <section id="timeline" class="py-20 px-6 bg-white">
     <div class="max-w-4xl mx-auto">
       
@@ -369,7 +433,6 @@
     </div>
   </section>
 
-  <!-- CUENTA REGRESIVA -->
   <section id="countdown" class="py-20 px-6 bg-gradient-to-b from-rose-50 to-white">
     <div class="max-w-4xl mx-auto">
       
@@ -403,7 +466,6 @@
     </div>
   </section>
 
-  <!-- DRESS CODE -->
   <section class="py-20 px-6 bg-white">
     <div class="max-w-4xl mx-auto">
       
@@ -441,7 +503,6 @@
     </div>
   </section>
 
-  <!-- UBICACIÓN -->
   <section id="location" class="py-20 px-6 bg-gradient-to-b from-rose-50 to-white">
     <div class="max-w-4xl mx-auto">
       
@@ -450,7 +511,6 @@
         <p class="font-serif text-xl text-gray-600">Nos encontramos aquí</p>
       </div>
 
-      <!-- CEREMONIA -->
       <div class="mb-12">
         <div class="bg-gradient-to-r from-amber-100 to-rose-100 rounded-t-2xl p-6 border-2 border-amber-200">
           <div class="flex items-center gap-3">
@@ -482,7 +542,6 @@
         </div>
       </div>
 
-      <!-- RECEPCIÓN -->
       <div>
         <div class="bg-gradient-to-r from-rose-100 to-amber-100 rounded-t-2xl p-6 border-2 border-rose-200">
           <div class="flex items-center gap-3">
